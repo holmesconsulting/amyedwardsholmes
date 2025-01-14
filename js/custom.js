@@ -61,7 +61,7 @@
       recaptcha: recaptchaResponse
     };
 
-    const response = await fetch('https://script.google.com/macros/s/AKfycbx3v2iiv6Ga3FVyetile4nLoYgMz6aAwPusJmRXeCTs4YgqhoZn5qogMk4mlDlQwYw/exec', {
+    const response = await fetch('https://script.google.com/a/macros/holmesconsulting.group/s/AKfycbx3v2iiv6Ga3FVyetile4nLoYgMz6aAwPusJmRXeCTs4YgqhoZn5qogMk4mlDlQwYw/exec', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
