@@ -42,3 +42,36 @@
   })(window.jQuery);
 
   
+
+  const form = document.getElementById('dataForm');
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const recaptchaResponse = grecaptcha.getResponse();
+
+    if (!recaptchaResponse) {
+      alert('Please complete the CAPTCHA.');
+      return;
+    }
+
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value,
+      recaptcha: recaptchaResponse
+    };
+
+    const response = await fetch('https://script.google.com/macros/s/AKfycbx3v2iiv6Ga3FVyetile4nLoYgMz6aAwPusJmRXeCTs4YgqhoZn5qogMk4mlDlQwYw/exec', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+    if (result.status === 'success') {
+      alert('Form submitted successfully!');
+      form.reset();
+    } else {
+      alert('Error submitting form.');
+    }
+  });

@@ -163,6 +163,16 @@ url("../fonts/bootstrap-icons.woff?856008caa5eb66df68595e734e59580d") format("wo
 .bi-binoculars::before { content: "\f18f"; }
 .bi-blockquote-left::before { content: "\f190"; }
 .bi-blockquote-right::before { content: "\f191"; }
+.bi-bluesky::before {
+  content: "";
+  background-color: currentColor;
+  -webkit-mask: url("../images/icons/bluesky.svg") no-repeat 50% 50%;
+  mask: url("../images/icons/bluesky.svg") no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  height: 16px;
+  width: 16px;
+}
 .bi-book-fill::before { content: "\f192"; }
 .bi-book-half::before { content: "\f193"; }
 .bi-book::before { content: "\f194"; }
