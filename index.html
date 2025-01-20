@@ -296,6 +296,9 @@ https://templatemo.com/tm-567-nomad-force
               const response = await fetch("https://script.google.com/macros/s/AKfycby4xq7l60EpTypThg25LqKGpIKVFx3sgL5ssYyDgfk_pR5kXRrPymHfygfeGqwktiU/exec", {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
+                mode: "no-cors", 
+                cache: "no-cache",
+                redirect: "follow",   
                 body: JSON.stringify(formData)
               });
           
