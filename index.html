@@ -293,23 +293,42 @@ https://templatemo.com/tm-567-nomad-force
                 recaptcha: recaptchaResponse
               };
           
-              const response = await fetch("https://script.google.com/macros/s/AKfycbwgP98hII1CU-ZV032-twbY7VVoAWXlRWDqY8S5TJRYflzsCryj6p8qvoAViEs1aQ4p/exec", {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                mode: "no-cors", 
-                cache: "no-cache",
-                redirect: "follow",   
-                body: JSON.stringify(formData)
-              });
+              // const response = await fetch("https://script.google.com/macros/s/AKfycbwgP98hII1CU-ZV032-twbY7VVoAWXlRWDqY8S5TJRYflzsCryj6p8qvoAViEs1aQ4p/exec", {
+              //   method: 'POST',
+              //   headers: { 'Content-Type': 'application/json' },
+              //   mode: "no-cors", 
+              //   cache: "no-cache",
+              //   redirect: "follow",   
+              //   body: JSON.stringify(formData)
+              // });
+              fetch('https://script.google.com/macros/s/AKfycbwgP98hII1CU-ZV032-twbY7VVoAWXlRWDqY8S5TJRYflzsCryj6p8qvoAViEs1aQ4p/exec', {
+                  method: 'POST',
+                  body: formData
+              })
+                .then(response => response.json())
+                .then(data => {
+                if (data.result === 'success') {
+                  alert("Form submitted successfully!");
+                  // Clear the form fields
+                  document.getElementById("contact-form").reset();
+                } else {
+                        alert("Error submitting form.");
+                    }
+                })
+                .catch(error => {
+                  console.error('Error:', error);
+                  alert("An error occurred while submitting the form.");
+                });
+              });  
           
-              const result = await response.json();
-              if (result.status === 'success') {
-                alert('Form submitted successfully!');
-                form.reset();
-              } else {
-                alert('Error submitting form.');
-              }
-            });
+            //   const result = await response.json();
+            //   if (result.status === 'success') {
+            //     alert('Form submitted successfully!');
+            //     form.reset();
+            //   } else {
+            //     alert('Error submitting form.');
+            //   }
+            // });
           </script>
     </body>
 </html>
