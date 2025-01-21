@@ -332,10 +332,9 @@ https://templatemo.com/tm-567-nomad-force
                     cache: "no-cache",
                     redirect: "follow",   
                     body: JSON.stringify(formData)
-                  })
-                    alert("Form submitted successfully!");
-                    // Clear the form fields
-                    document.getElementById("contact-form").reset();
+                  });
+                  alert("Form submitted successfully!");
+                  document.getElementById("contact-form").reset();
               } catch {
                   alert('Error submitting form.')
               }
