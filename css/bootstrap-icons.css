@@ -166,8 +166,8 @@ url("../fonts/bootstrap-icons.woff?856008caa5eb66df68595e734e59580d") format("wo
 .bi-bluesky::before {
   content: "";
   background-color: currentColor;
-  -webkit-mask: url("../images/icons/bluesky.svg") no-repeat 50% 50%;
-  mask: url("../images/icons/bluesky.svg") no-repeat 50% 50%;
+  -webkit-mask: url("../assets/icons/bluesky.svg") no-repeat 50% 50%;
+  mask: url("../assets/icons/bluesky.svg") no-repeat 50% 50%;
   -webkit-mask-size: cover;
   mask-size: cover;
   height: 16px;
